@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HOUalert.us</title>
+
+		<!-- tab icon image -->
+		<link rel="icon" href="resources/static/images/favicon.ico">
+
+		<!-- Mobile support -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Boiler Plate CSS files -->
+		<link rel="stylesheet" type="text/css" href="resources/static/css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="resources/static/css/normalize.css"/>
+
+		<!-- Default Twitter Bootstrap & Custom Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/static/css/custom.css">
+
+		<!-- material design bootstrap -->
+		<link href="bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
+		<link href="bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
+		<link href=​"bower_components/bootstrap-material-design/dist/​css/​ripples.min.css" rel=​"stylesheet">​
+
+		<!-- Esri viewport information -->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+
+		<!-- include Jquery js, Materal.js, Bootstrap js, and Google Fonts -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<!-- include native static resources-->
+		<link rel="stylesheet" type="text/css" href="resources/static/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="resources/static/css/map.css"/>
+		<link rel="stylesheet" type="text/css" href="resources/static/css/hover.css"/>
+		<script src="resources/static/js/main.js"></script>
+
+		<!-- reference the ArcGIS JavaScript API -->
+		<link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
+		<script src="http://js.arcgis.com/3.13/"></script>
+
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<!-- HOUalert navbar -->
+			<div id="main-navbar" class="navbar navbar-default navbar-fixed-top navbar-material-blue transition" role="navigation">
+				<div class="container-fluid" id="container-1">
+
+					<!-- code for drop down menu information -->
+					<div id="navbar-info">
+
+						<!-- list group -->
+						<div class="list-group" id="nav-info-modal">
+
+							<a class="list-group-item" href="http://www.houstonoem.org/go/doc/4027/1080643/Hurricane-Evacuation">Hurricane Evacuation Information<a>
+							<a class="list-group-item" href="http://www.houstonoem.org/go/doc/4027/1146795">Get an Emergency Kit</a>
+							<a class="list-group-item" href="http://www.houstonoem.org/go/doc/4027/1130387">Emergency Assistance Registry</a>
+							<a class="list-group-item" href="http://www.houstonemergency.org/go/mailinglist/2263">Alert Houston</a>
+							<a class="list-group-item" href="http://www.houstonoem.org/go/doc/4027/1147079">Make an Emergency Plan</a>
+							<a class="list-group-item" href="http://www.houstonoem.org/go/doc/4027/1198223">Emergency Information Sources</a>
+							<a class="list-group-item" href="http://www.houstonoem.org/go/doc/4027/1138879/">Potential Hazards</a>
+							<a class="list-group-item" href="http://www.hcoem.org/HCMap.aspx?P=Evacuation">Hurricane Evacuation Map</a>
+
+					    </div>
+
+					</div>
+
+			  		<div class="navbar-header">
+			  			<button id="toggle" class="transition" onclick="dropbar();"> <img id="toggleimg" alt="info" src="resources/static/images/menu_rectangles.png"> </button>
+			    		<h2> HOUalert </h2>
+			  		</div>
+
+		  		</div>
+			</div>
+		
+		    <!-- map and search bar -->
+		    <div id="ui-esri-map">
+				<div id="ui-esri-dijit-geocoder"></div>
+				<div id="homeButton"></div>
+				<div id="locateButton"></div>
+		    </div>
+		    
+		    <!-- filter button -->
+		    <div class="hvr-buzz-out transition" id="filter"> <img id="filterimg" alt="info" src="resources/static/images/filter-icon.png" data-toggle="modal" data-target="#filter-settings-modal"> </div>
+
+		    <!-- report an incident button -->
+			<div class="hvr-buzz-out transition" id="report" onclick="report();"><p id="md-point" >!</p> </div>
+
+			<div class="modal fade" id="filter-settings-modal">
+    			<div class="modal-dialog modal-lg">
+        			<div class="modal-content">
+            			<div class="modal-header">
+                			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                			<h4 class="modal-title">Search Filter Settings</h4>
+            			</div>
+
+            			<div class="modal-body">
+
+            				<div class="form-group">
+
+	            				<h5> 311 Request Status </h5>
+		            			<div class="radio radio-success">	
+			            			<label> 
+			            				<input checked type="radio" name="request-status-option" value="Open"> 
+										<span class=ripple></span>
+										<span class=circle></span>
+										<span class=check></span>
+										Open 
+									</label>
+		            			</div>
+
+		            			<div class="radio radio-success">	
+			    					<label> 
+			    						<input type="radio" name="request-status-option" value="Closed"> 
+			    						<span class=ripple></span>
+										<span class=circle></span>
+										<span class=check></span>
+										Closed 
+									</label>
+		    					</div>
+
+		    					<div class="radio radio-success">	
+			    					<label> 
+			    						<input type="radio" name="request-status-option" value="None">
+			    						<span class=ripple></span>
+										<span class=circle></span>
+										<span class=check></span>
+										Don't Filter Request Status
+									</label>
+		    					</div>
+
+	  							<br><label>Additional Keywords (Optional):</label>
+	  							<input class="form-control" id="pwd">
+							</div>
+            			</div>
+
+            			<div class="modal-footer">
+                			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                			<button type="button" class="btn btn-primary btn-material-blue" id="apply-filter-btn" onclick="filter();">Apply Filter</button>
+            			</div>
+        			</div>
+    			</div>
+			</div>
+		</div>	
+	</body>
+</html>
+
+<!-- 		
+			<div class="transition slideaway" id="content-left">
+				<h3>Info</h3>
+				<div class="transition" id="inner-info">
+					<table>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1080643/Hurricane-Evacuation">Hurricane Evacuation Information</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1146795">Get an Emergency Kit</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1130387">Emergency Assistance Registry</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonemergency.org/go/mailinglist/2263">Alert Houston</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1147079">Make an Emergency Plan</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1198223">Where to get Information during Emergencies</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1138879/">Potential Hazards</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.hcoem.org/HCMap.aspx?P=Evacuation">Hurricane Evacuation Map</a></td></tr>
+						<tr class="transition table"><td><a id="info-selector">Utility Contact Information</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="about.html">About HOUalert.us</a></td></tr>
+					</table>
+					<div class="transition" id="other-info">
+						<p class="transition" id="infop"><b>Electricity Providers:</b><br><br>
+				CenterPoint: <br>713-207-2222 / 800-332-7143<br>Tweet @CNPAlerts<br><br>
+				Texas-New Mexico Power: <br>888-866-7456<br><br>
+				AEP: <br>877-373-4858<br>
+				<br>
+				<b>Other Utility Problems Call 311</b> (713-837-0311)</p>
+					</div>
+				</div>
+
+			<div id="creators">
+				<p>Created at the Houston Hackathon 2015<br>by CLHS and Friends<br></p>
+			</div>
+		</div> -->
+
+
+

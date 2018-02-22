@@ -1,0 +1,58 @@
+
+/* override default Esri map style */
+
+
+/* Esri attibution display */
+.esriControlsBR {
+  display: none;
+}
+
+.esriAttribution {
+
+}
+
+/* Esri map style */
+#ui-esri-map {
+
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+}
+
+/* Esri zoom buttom styling */
+#ui-esri-map_zoom_slider {
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+/* Esri home button */
+#homeButton {
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  z-index: 3;
+}
+
+#locateButton {
+  position: absolute;
+  top: 125px;
+  left: 20px;
+  z-index: 3;
+}
+
+/* Esri search box styling */
+#ui-esri-dijit-geocoder {
+
+	position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 3;
+}

@@ -1,0 +1,173 @@
+/*
+Theme Name: LeroyDiesel
+Theme URI: stuff.com
+Author: Patrick E
+Author URI: http://wordpress.org/
+Description: 
+Version: 1.0
+Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: twentyfourteen
+*/
+
+* {
+	margin: 0;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* prevent user selection of images */
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* filter form header */
+#filter-form-header {
+
+  margin-bottom: 15px;
+}
+
+
+.radio {
+  margin: 20px 10px;
+}
+
+/* material design ease animation */
+.transition{
+  transition: all .5s;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-timing-function: ease-in-out;
+}
+
+/* content container */
+#container {
+  
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+/* data toggle button */
+
+#toggle {
+
+  position: fixed;
+  top: 8px;
+  right: 10px;
+  background-color: #2196F3;
+
+}
+
+#toggleimg {
+	height: 40px;
+	margin: 0;
+}
+	
+#toggle:hover {
+	background: rgba(255,255,255,0.2);
+	border-radius: 35%;
+}
+
+/* info for dropdown navbar */
+
+#navbar-info {
+
+  opacity: 0;
+  font-size: 20px;
+  height: 260px;
+}
+
+#navbar-info .list-group-item {
+
+  color: white;  
+  padding-bottom: 5px;
+}
+
+#navbar-info .list-group-item:hover {
+
+  background: rgba(255,255,255,0.2);
+}
+
+#navbar-info .list-group-item:active {
+
+  background: rgba(255,255,255,0.5);
+}
+
+/* data filter button */
+
+#filterimg { 
+
+  height: 40px;
+  margin: 0;
+}
+
+#filter {
+
+  padding: 10px;
+  background: #2196F3;  
+  position: fixed;
+  bottom: 80px;
+  right: 15px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 1px #9E9E9E;
+  z-index: 700;
+  outline: none;
+}
+
+#filter:active {
+
+  background: #1E87DB;
+}
+
+/* 311 report button */
+
+#report{
+
+  text-align: center;
+  background: #DD2C00;
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 1px #9E9E9E;
+  z-index: 600;
+  outline: none;
+}
+
+#report:active {
+
+	background: #C72800;
+}
+
+#md-point p {
+
+  outline: none;
+}
+
+#md-point{
+
+  margin: 0px;
+	color: white;
+  font-size: 45px;
+  text-decoration: none;
+}

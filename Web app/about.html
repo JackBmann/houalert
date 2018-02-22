@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HOUalert.us | About</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<link rel="icon" href="images/favicon.ico">
+<script>
+            window.onload = function() {
+            $( "button#toggle" ).click(function() {
+                $("div#content-left").toggleClass( "slideaway" );
+            });
+            $( "a#info-selector" ).click(function() {
+                $("div#other-info").toggleClass( "visible" );
+                $("p#infop").toggleClass( "infopclass" );
+            });
+            var viewportHeight = $(window).height();
+            $( "div#content-left").css( "height", (viewportHeight-60));
+            $( "div#about-container").css( "height", (viewportHeight-60));
+            };
+
+</script>
+<!--maps loading-->
+
+
+</head>
+
+<body>
+<div id="container">
+	<div class="transition" id="header">
+		<button class="transition" id="toggle"><img id="buttonimg" src="images/menu_rectangles.png"></button>
+      	<a id="toplink" href="http://houalert.us"><h2>HOUalert.us</h2></a>
+    </div>
+		<div id="content">
+			<div class="transition slideaway" id="content-left">
+				<h3>Info</h3>
+				<div  class="transition" id="inner-info">
+					<table>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1080643/Hurricane-Evacuation">Hurricane Evacuation Information</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1146795">Get an Emergency Kit</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1130387">Emergency Assistance Registry</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonemergency.org/go/mailinglist/2263">Alert Houston</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1147079">Make an Emergency Plan</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1198223">Where to get Information during Emergencies</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1138879/">Potential Hazards</a></td></tr>
+						<tr class="transition table"><td><a class="tablea" href="http://www.hcoem.org/HCMap.aspx?P=Evacuation">Hurricane Evacuation Map</a></td></tr>
+						<tr class="transition table"><td><a id="info-selector">Utility Contact Information</a></td></tr>
+					</table>
+					<div class="transition" id="other-info">
+						<p class="transition" id="infop"><b>Electricity Providers:</b><br><br>
+				CenterPoint: <br>713-207-2222 / 800-332-7143<br>Tweet @CNPAlerts<br><br>
+				Texas-New Mexico Power: <br>888-866-7456<br><br>
+				AEP: <br>877-373-4858<br>
+				<br>
+				<b>Other Utility Problems Call 311</b> (713-837-0311)</p>
+					</div>
+				</div>
+			<div id="creators">
+				<p>Created at the Houston Hackathon 2015<br>by CLHS and Friends<br></p>
+				
+			</div>
+			</div>
+        <div id="about-container">
+          <div id="about">
+              <table class="about-table">
+                <tr class="abouttr"><td class="abouttd">
+                  <h3>Concept\\</h3>
+                  <p class="aboutp">After experiencing a recent storm, and the subsequent pandemonium, we were inspired to create a system that would conglomerate all current emergency, weather, and public works data into a seamless and easy to use interface.  Using the revolutionary ESRI mapping system, we were able to layer  311, Police, Fire, Weather, and Hurricane data, resulting in one map that accomplishes what previously took four.</p>
+                </td></tr>
+
+                <tr class="abouttr"><td class="abouttd">
+                  <h3>Android\\</h3>
+                  <p class="aboutp">Our Android application allows mobile users to quickly view and filter different public works as well as emergency data, and lets the public quickly submit new 311 requests without going through the current nightmarish forms.  It also lists various emergency data that people might find useful weather in times of distress or calm.  </p>
+                </td></tr>
+
+                <tr class="abouttr"><td class="abouttd">
+                  <h3>Web\\</h3>
+                  <p class="aboutp">The web interface implements many of the same things as the Android application while allowing room to grow.  311 data is fully operational, while HPD and HFD data is frameworked in anticipation of direct API access.  It lists the same preparation, recovery, and relief information as the app, letting users prepare at home and on the move. </p>
+                </td></tr>
+              </table>
+          </div>
+        </div>
+   	</div>
+
+</div>
+</body>
+</html>

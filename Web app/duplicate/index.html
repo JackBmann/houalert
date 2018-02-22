@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HOUalert.us</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<link rel="icon" href="images/favicon.ico">
+<script>
+            window.onload = function() {
+            $( "button#toggle" ).click(function() {
+                $("div#content-left").toggleClass( "slideaway" );
+            });
+            $( "a#info-selector" ).click(function() {
+                $("div#other-info").toggleClass( "visible" );
+                $("p#infop").toggleClass( "infopclass" );
+            });
+            var viewportHeight = $(window).height();
+            $( "div#content-left").css( "height", (viewportHeight-60));
+            $( "div#mapDiv").css( "height", (viewportHeight-60));
+            };
+
+</script>
+<!--maps loading-->
+<link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
+<script>var dojoConfig = {parseOnLoad: true};</script>
+	<script src="http://js.arcgis.com/3.13/"></script>
+
+	<!-- load the map -->
+	<script>
+
+    dojo.require("dijit.layout.BorderContainer");
+    dojo.require("dijit.layout.ContentPane");
+    dojo.require("esri.map");
+      
+  	var map;
+		require([
+      		"esri/map",
+      		"esri/layers/FeatureLayer",
+         // "esri/layers/ArcGISDynamicMapServiceLayer",
+          "dojo/domReady!"
+      		
+			], function(Map, layer, FeatureLayer) {
+
+			 // code to create the map and add a basemap will go here
+  			map = new Map("mapDiv", {
+    		  center: [-95.3698, 29.7604], // long, lat (houston)
+    		  zoom: 11,
+    		  basemap: "topo"
+  			});
+
+  			// geo database server table, 0th table, spacial reference web mercator,
+
+			// var featureLayer = new FeatureLayer("http://mycity.houstontx.gov/ArcGIS10/rest/services/wm/SR311Display_wm/MapServer", {
+			// 	mode: esri.layers.FeatureLayer.MODE_ONDEMAND
+			// });
+
+   //    map.addLayer(featureLayer);
+
+       // var featureLayer= new ArcGISDynamicMapServiceLayer("http://mycity.houstontx.gov/ArcGIS10/rest/services/wm/SR311Display_wm/MapServer", {
+        //});
+
+        //add the reference layer
+        // var featureLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://mycity.houstontx.gov/ArcGIS10/rest/services/wm/SR311Display_wm/MapServer");      
+        //map.addLayer(featureLayer);
+
+    		
+  		});
+
+	</script>
+
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+		<button id="toggle"><img id="buttonimg" src="images/menu_rectangles.png"></button>
+      	<h2>HOUalert.us</h2>
+    </div>
+		<div id="content">
+			<div id="content-left" class="slideaway">
+				<h3>Info</h3>
+				<div id="inner-info">
+					<table>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1080643/Hurricane-Evacuation">Hurricane Evacuation Information</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1146795">Get an Emergency Kit</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1130387">Emergency Assistance Registry</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonemergency.org/go/mailinglist/2263">Alert Houston</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1147079">Make an Emergency Plan</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1198223">Where to get Information during Emergencies</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.houstonoem.org/go/doc/4027/1138879/">Potential Hazards</a></td></tr>
+						<tr class="table"><td><a class="tablea" href="http://www.hcoem.org/HCMap.aspx?P=Evacuation">Hurricane Evacuation Map</a></td></tr>
+						<tr class="table"><td><a id="info-selector">Utility Contact Information</a></td></tr>
+					</table>
+					<div id="other-info">
+						<p id="infop"><b>Electricity Providers:</b><br><br>
+				CenterPoint: <br>713-207-2222 / 800-332-7143<br><br>
+				Texas-New Mexico Power: <br>888-866-7456<br><br>
+				AEP: <br>877-373-4858<br>
+				<br>
+				<b>Other Utility Problems Call 311</b></p>
+					</div>
+				</div>
+			<div id="creators">
+				<p>Created at the Houston Hackathon 2015<br>by CLHS and Friends</p>
+			</div>
+			</div>
+			<div id="mapDiv"></div>
+		<div id="containing">
+        <a href="http://www.google.com">   
+			<div id="report"><p id="md-point" >!</p></div>
+		</a>
+ 		</div>
+        
+   	</div>
+
+</div>
+</body>
+</html>

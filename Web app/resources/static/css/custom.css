@@ -1,0 +1,74 @@
+
+
+/* modal style */
+.modal {
+
+	top: 60px;
+	z-index: 4000;
+}
+
+/* title of a modal in bootstrap */
+.modal-title {
+
+	padding-bottom: 20px;
+}
+
+/* in modal forms are more centered */
+.modal .form-group {
+
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/* Customize default bootstrap for use with HOUalert */
+
+.navbar {
+
+	margin: 0px;
+	height: 60px;
+	display: block;
+	background: #2196F3;
+	box-shadow: 0px 3px 3px #9E9E9E;
+}
+
+.navbar-default {
+
+	border: none;
+}
+
+.list-group {
+
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/*.navbar-header {
+
+  background-color: yellow;
+  width: 90%;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+
+.navbar .container-fluid {
+
+	padding: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 70px;
+}
+
+.navbar-header h2 {
+
+	position: absolute;
+	margin: 0px;
+	margin-bottom: 10px;
+	left: 20px;
+	top: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: white;
+	font-size: 35px;
+}
